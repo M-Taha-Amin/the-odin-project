@@ -1,0 +1,110 @@
+/* General styles */
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: arial;
+}
+
+body {
+  background-color: rgb(242, 242, 242);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.container {
+  position: relative;
+  background-color: white;
+  width: 45vw;
+  height: max-content;
+  margin: auto;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* recipes img styles */
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 1.8rem auto;
+}
+
+/* styles for multiple sections */
+
+.description,
+.ingredients,
+.preparation {
+  text-align: left;
+  padding: 0.9rem;
+}
+
+.description > ul,
+.ingredients > ul,
+.preparation > ol {
+  margin-left: 1.5rem;
+  padding: 0.9rem 0px;
+}
+
+.description > ul > li,
+.ingredients > ul > li,
+.preparation > ol > li {
+  padding: 0.125rem;
+}
+
+.ingredients > h4,
+.preparation > ol > li > h4 {
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+}
+
+/* section:Description styles */
+
+.description > p,
+ul {
+  line-height: 1.5rem;
+}
+
+/* section:Ingredients styles */
+
+.ingredients > h3 {
+  letter-spacing: 0.18rem;
+  color: darkblue;
+}
+
+.ingredients > hr {
+  color: blue;
+}
+
+/* section:Preparation styles */
+
+.preparation > h3 {
+  letter-spacing: 0.18rem;
+  color: darkred;
+}
+
+.preparation > hr {
+  color: red;
+}
+
+.preparation > ol > li > p {
+  padding: 0.31rem 0px;
+}
+.preparation > ol > li {
+  padding: 0.5rem;
+}
+/* footer styles */
+footer {
+  position: absolute;
+  bottom: 0.25rem;
+  font-size: 0.88rem;
+  left: 30%;
+  right: 30%;
+}
