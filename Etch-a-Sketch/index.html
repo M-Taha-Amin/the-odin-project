@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch A Sketch</title>
+    <link rel="shortcut icon" href="Images/pen.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="center-txt">Etch a Sketch</h1>
+        <div class="number-container box-shadow center-txt">
+          <p class="number">Enter a number</p>
+          <div class="warning">
+            <i class="fa fa-exclamation-circle"></i>
+            <p class="warning-msg">Enter a number between 1 and 100</p>
+          </div>
+          <input
+            type="number"
+            min="1"
+            max="100"
+            class="number-input center-txt"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container main-container">
+        <div class="tools box-shadow center-txt">
+          <div class="tool-container">
+            <img
+              src="Images/paint-bucket.svg"
+              alt="paint-bucket"
+              class="tool bucket"
+            />
+            <p class="tool-name">Black</p>
+          </div>
+
+          <div class="tool-container">
+            <img src="Images/rainbow.svg" class="rainbow tool" alt="rainbow" />
+            <p class="tool-name">Rainbow</p>
+          </div>
+          <div class="tool-container">
+            <img src="Images/eraser.svg" alt="eraser" class="tool eraser" />
+            <p class="tool-name">Eraser</p>
+          </div>
+          <div class="tool-container">
+            <img src="Images/clear.svg" alt="clear-button" class="tool clear" />
+            <p class="tool-name">Clear</p>
+          </div>
+        </div>
+        <div class="grid box-shadow"></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
