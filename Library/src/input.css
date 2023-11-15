@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --transition: 300ms all ease;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+.button {
+  @apply rounded-md border-2 px-4 py-2 font-semibold transition-all active:opacity-80;
+}
+
+.popupButton {
+  @apply fixed bottom-4 right-4 h-12 w-12 rounded-full border-2 border-navy bg-transparent text-4xl font-light text-navy shadow-md transition-all hover:rotate-90 hover:scale-[1.4] hover:bg-navy hover:text-beige hover:shadow-2xl active:opacity-80 md:bottom-10 md:right-12;
+}
+.bookForm {
+  @apply fixed left-1/2 top-1/2 flex w-[90%] -translate-x-1/2 -translate-y-1/2 flex-col gap-y-6 rounded-lg bg-white p-4 px-8 shadow-xl lg:w-[40%];
+}
+.card {
+  @apply relative mx-auto flex h-full w-[95%] max-w-md flex-col gap-y-5 rounded-md border-l-8 px-6 py-8 pb-14 shadow-lg ring-2 sm:w-full;
+}
+.delete-button {
+  @apply absolute right-2 top-0 cursor-pointer text-3xl text-slate-400 transition-all hover:rotate-90 hover:scale-150 hover:text-slate-600;
+}
+.title {
+  @apply mx-auto max-w-[250px] text-center text-2xl font-bold capitalize leading-7 sm:max-w-xs;
+}
+.header {
+  @apply sticky top-0 z-10 flex h-20 w-full items-center justify-center bg-navy text-beige shadow-md;
+}
+.main {
+  @apply container mx-auto my-10 grid grid-cols-1 items-center gap-6 px-4 md:grid-cols-2 lg:grid-cols-3;
+}
+.read {
+  @apply border-sky-400 bg-sky-400/10 ring-sky-400;
+}
+.unread {
+  @apply border-lightRed bg-lightRed/10 ring-lightRed;
+}
+
+.circle-bg-read {
+  @apply bg-beige;
+}
+.circle-read {
+  @apply translate-x-6 bg-navy;
+}
+.circle-bg-unread {
+  @apply translate-x-0 bg-beige;
+}
+.circle-unread {
+  @apply bg-lightRed;
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#overlay,
+#circle,
+#card,
+#markAsReadEl {
+  transition: var(--transition);
+}

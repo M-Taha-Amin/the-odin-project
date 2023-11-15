@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="text-[17.5px] sm:text-[20px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="book.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>24x7 Library - There for you</title>
+  </head>
+  <body class="relative min-h-screen bg-beige">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="text-4xl font-bold">
+        <span class="text-lightRed">24x7</span>Library
+      </h1>
+    </header>
+
+    <!-- Books display Grid -->
+    <main id="container" class="main"></main>
+
+    <!-- Add Book Popup Button -->
+    <button id="form-popup-button" class="popupButton">+</button>
+
+    <!-- Blurred overlay -->
+    <div
+      id="overlay"
+      class="invisible fixed inset-0 z-20 h-full opacity-0 backdrop-blur-sm"
+    >
+      <!-- Book Form -->
+      <form id="book-form" class="bookForm">
+        <h2 class="text-center text-2xl font-semibold text-navy">
+          Add New Book
+        </h2>
+        <fieldset class="flex flex-col">
+          <label for="title" class="text-base">Book Title</label>
+          <input
+            type="text"
+            id="title"
+            class="rounded-sm border-[1px] border-black/20 px-2 py-1 text-sm outline-none"
+            placeholder="Title"
+            required
+          />
+        </fieldset>
+        <fieldset class="flex flex-col">
+          <label for="author" class="text-base">Book Author</label>
+          <input
+            type="text"
+            id="author"
+            class="rounded-sm border-[1px] border-black/20 px-2 py-1 text-sm outline-none"
+            placeholder="Author"
+            maxlength="25"
+            required
+          />
+        </fieldset>
+        <fieldset class="flex flex-col">
+          <label for="pages" class="text-base">Number of Pages</label>
+          <input
+            type="text"
+            id="pages"
+            class="rounded-sm border-[1px] border-black/20 px-2 py-1 text-sm outline-none"
+            placeholder="Pages"
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <p class="font-semibold">Did you read this book?</p>
+          <div class="mb-[-5px] mt-1">
+            <input
+              type="radio"
+              class="mr-1"
+              name="read-status"
+              value="read"
+              id="read"
+              checked
+            /><label for="read">Read Already</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              class="mr-1"
+              name="read-status"
+              value="unread"
+              id="unread"
+            /><label for="unread">Not yet</label>
+          </div>
+        </fieldset>
+        <div class="flex justify-center gap-x-4">
+          <button
+            id="add-book-button"
+            type="submit"
+            class="button border-navy text-navy hover:bg-navy hover:text-beige"
+          >
+            Add Book
+          </button>
+          <button
+            id="cancel-button"
+            type="button"
+            class="button border-darkRed text-darkRed hover:bg-darkRed hover:text-beige"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
