@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="shortcut icon" href="Assets/dashboard.svg" type="image/x-icon" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body
+    class="grid h-full min-h-screen w-full grid-cols-[280px_1fr] grid-rows-1 font-[Roboto]"
+  >
+    <!-- Siderbar -->
+    <aside class="flex flex-col gap-y-9 bg-primaryColor p-4 text-white">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="Assets/dashboard.svg" class="w-10" alt="dashboard-icon" />
+        <h1 class="text-2xl font-medium">Dashboard</h1>
+      </div>
+
+      <!-- links 1 -->
+      <ul class="space-y-2 px-2">
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/home.svg" alt="home-icon" class="icon" />
+          <h2 class="text-base font-medium">Home</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img
+            src="Assets/profile.svg"
+            alt="profile-picture-icon"
+            class="icon"
+          />
+          <h2 class="text-base font-medium">Profile</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/messages.svg" alt="messages-icon" class="icon" />
+          <h2 class="text-base font-medium">Messages</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/history.svg" alt="history-icon" class="icon" />
+          <h2 class="text-base font-medium">History</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/tasks.svg" alt="tasks-icon" class="icon" />
+          <h2 class="text-base font-medium">Tasks</h2>
+        </li>
+
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/community.svg" alt="community-icon" class="icon" />
+          <h2 class="text-base font-medium">Communities</h2>
+        </li>
+      </ul>
+
+      <!-- links 2 -->
+      <ul class="space-y-2 px-2">
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/gear.svg" alt="settings-icon" class="icon" />
+          <h2 class="text-base font-medium">Settings</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/support.svg" alt="support-icon" class="icon" />
+          <h2 class="text-base font-medium">Support</h2>
+        </li>
+        <li class="flex items-center gap-x-4">
+          <img src="Assets/privacy.svg" alt="privacy-icon" class="icon" />
+          <h2 class="text-base font-medium">Privacy</h2>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Container for 2nd column of parent grid -->
+    <div class="grid grid-rows-[200px_1fr]">
+      <!-- Header -->
+      <header
+        class="grid grid-cols-[1.5fr_1fr] grid-rows-[1fr_1.5fr] px-8 shadow-md"
+      >
+        <!-- Search bar -->
+        <div class="flex items-center gap-x-4 pr-8">
+          <img src="Assets/search.svg" alt="search-icon" class="icon" />
+          <input
+            type="text"
+            class="w-full rounded-full bg-gray-200/60 px-2 py-1 text-sm outline-none"
+          />
+        </div>
+
+        <!-- notifications, pfp and username -->
+        <div class="flex items-center gap-x-7 px-14">
+          <img
+            src="Assets/notifications.svg"
+            alt="notifications-icon"
+            class="icon"
+          />
+          <img src="Assets/zoro.jpg" class="w-9 rounded-full" alt="zoro" />
+          <h2 class="font-medium">Roronoa Zoro</h2>
+        </div>
+
+        <!-- Hi, there User -->
+        <div class="flex items-center gap-x-4">
+          <div>
+            <img src="Assets/zoro.jpg" alt="zoro" class="w-16 rounded-full" />
+          </div>
+          <div class="space-y-[-8px]">
+            <p class="text-xs font-semibold">Hi there,</p>
+            <p class="text-2xl font-semibold">Roronoa Zoro (@zorojuro)</p>
+          </div>
+        </div>
+
+        <!-- New, upload and save buttons -->
+        <div class="flex items-center gap-x-4">
+          <button
+            class="rounded-full bg-primaryColor px-6 py-2 text-sm font-medium text-white hover:bg-hoverColor active:bg-primaryColor"
+          >
+            New
+          </button>
+          <button
+            class="rounded-full bg-primaryColor px-6 py-2 text-sm font-medium text-white hover:bg-hoverColor active:bg-primaryColor"
+          >
+            Upload
+          </button>
+          <button
+            class="rounded-full bg-primaryColor px-6 py-2 text-sm font-medium text-white hover:bg-hoverColor active:bg-primaryColor"
+          >
+            Save
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content-->
+      <main class="grid grid-cols-3 gap-x-6 bg-gray-200/60 p-4">
+        <!-- Column 1 -->
+        <div>
+          <h2 class="mb-4 text-base font-semibold">Your Projects</h2>
+          <!-- Cards -->
+          <div class="space-y-6">
+            <div
+              class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+            >
+              <h3 class="text-base font-semibold">Thirty-Six Pound Phoenix</h3>
+              <p class="text-sm text-black/50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                ea totam ad harum ut cum.
+              </p>
+              <div class="mt-4 flex justify-end space-x-4">
+                <img src="Assets/star.svg" alt="star-icon" class="icon" />
+                <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+                <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+              </div>
+            </div>
+            <div
+              class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+            >
+              <h3 class="text-base font-semibold">Tatsu Maki</h3>
+              <p class="text-sm text-black/50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                ea totam ad harum ut cum Lorem ipsum dolor sit amet Lorem ipsum
+                dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="mt-4 flex justify-end space-x-4">
+                <img src="Assets/star.svg" alt="star-icon" class="icon" />
+                <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+                <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+              </div>
+            </div>
+            <div
+              class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+            >
+              <h3 class="text-base font-semibold">Oni Giri</h3>
+              <p class="text-sm text-black/50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+                ea totam ad harum ut cum Lorem ipsum dolor sit amet.
+              </p>
+              <div class="mt-4 flex justify-end space-x-4">
+                <img src="Assets/star.svg" alt="star-icon" class="icon" />
+                <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+                <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="mt-10 space-y-6">
+          <!-- Cards -->
+          <div
+            class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+          >
+            <h3 class="text-base font-semibold">Dragon Twister</h3>
+            <p class="text-sm text-black/50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
+              totam ad harum ut cum.
+            </p>
+            <div class="mt-4 flex justify-end space-x-4">
+              <img src="Assets/star.svg" alt="star-icon" class="icon" />
+              <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+              <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+            </div>
+          </div>
+          <div
+            class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+          >
+            <h3 class="text-base font-semibold">Secret Technique</h3>
+            <p class="text-sm text-black/50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
+              totam ad harum ut cum Lorem ipsum dolor sit amet Lorem ipsum dolor
+              sit amet consectetur adipisicing elit.
+            </p>
+            <div class="mt-4 flex justify-end space-x-4">
+              <img src="Assets/star.svg" alt="star-icon" class="icon" />
+              <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+              <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+            </div>
+          </div>
+          <div
+            class="rounded-lg border-l-8 border-l-yellow-500 bg-white p-5 shadow-md"
+          >
+            <h3 class="text-base font-semibold">Asura</h3>
+            <p class="text-sm text-black/50">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ea
+              totam ad harum ut cum Lorem ipsum dolor sit amet.
+            </p>
+            <div class="mt-4 flex justify-end space-x-4">
+              <img src="Assets/star.svg" alt="star-icon" class="icon" />
+              <img src="Assets/eye.svg" alt="eye-icon" class="icon" />
+              <img src="Assets/fork.svg" alt="fork-icon" class="icon" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="grid grid-rows-2 gap-y-8 p-4">
+          <!-- Announcements -->
+          <div>
+            <h2 class="mb-3 text-base font-semibold">Announcements</h2>
+            <div class="rounded-lg bg-white p-6 shadow-md">
+              <div>
+                <h3 class="text-sm font-medium">Site Maintenance</h3>
+                <p class="text-xs text-black/50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dignissimos voluptatum dolore...
+                </p>
+              </div>
+              <hr class="my-4" />
+              <div>
+                <h3 class="text-sm font-medium">Community Share Day</h3>
+                <p class="text-xs text-black/50">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
+                  voluptatum at saepe Lorem ipsum dolor sit amet...
+                </p>
+              </div>
+              <hr class="my-4" />
+              <div>
+                <h3 class="text-sm font-medium">Updated Privacy Policy</h3>
+                <p class="text-xs text-black/50">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                  illo possimus vero, temporibus est ipsa...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trending -->
+          <div>
+            <div>
+              <h2 class="mb-3 text-base font-semibold">Trending</h2>
+              <div
+                class="flex flex-col gap-y-6 rounded-lg bg-white p-6 shadow-md"
+              >
+                <div class="flex items-center gap-x-2">
+                  <img
+                    src="https://www.spieltimes.com/wp-content/uploads/2023/04/One-Piece-chapter-1059-sabo-compressed.webp"
+                    class="h-10 w-10 rounded-full bg-cover"
+                  />
+                  <div>
+                    <h3 class="text-sm font-normal">@sabo</h3>
+                    <p class="text-xs font-light text-black/60">
+                      Revolutionary Army (2nd Commander)
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-x-2">
+                  <img
+                    src="https://lh5.googleusercontent.com/1qKzS2uFu2ZQYGuXWMJMSQczwy-6r-zXkg-MSi8uBfeS9nVhVSyVpXlZQiYhYw93TMfmS5mqZapHrzssFu3nVJ_nzPXv74YQ2M3wIkPi6E5qDgOzrtAfvNgxD5ZdWCbqVqpM8qJdBLirkddO04tXukI"
+                    class="h-10 w-10 rounded-full bg-cover"
+                  />
+                  <div>
+                    <h3 class="text-sm font-normal">@nekomamushi</h3>
+                    <p class="text-xs font-light text-black/60">
+                      Life Changing Cat
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-x-2">
+                  <img src="Assets/zoro.jpg" class="w-10 rounded-full" />
+                  <div>
+                    <h3 class="text-sm font-normal">@zorojuro</h3>
+                    <p class="text-xs font-light text-black/60">
+                      World Greatest Swordsman
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-x-2">
+                  <img
+                    src="https://staticg.sportskeeda.com/editor/2022/09/edc7f-16642041635794.png?w=840"
+                    class="h-10 w-10 rounded-full"
+                  />
+                  <div>
+                    <h3 class="text-sm font-normal">@ace</h3>
+                    <p class="text-xs font-light text-black/60">Fire Fist</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
