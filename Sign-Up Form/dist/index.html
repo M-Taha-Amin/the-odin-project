@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <main class="min-h-screen w-screen grid grid-cols-[0.65fr_1fr]">
+      <div class="bg-[url('space-boy-img.jpg')] bg-center relative">
+        <div
+          class="absolute bg-black/75 gap-x-4 h-24 w-full flex items-center justify-center top-[25%]">
+          <img src="whale-logo.png" class="h-[80%]" alt="whale-logo" />
+          <p class="text-white text-[40px] font-semibold">Omale</p>
+        </div>
+      </div>
+      <div
+        class="bg-black/95 text-white/75 py-16 pl-8 pr-24 text-lg font-medium">
+        <p>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up now
+          to get started.
+        </p>
+        <br />
+        <p>You <span class="italic">know</span> you want to.</p>
+        <br />
+        <br />
+        <p>Let's do this!</p>
+        <form
+          class="grid grid-cols-2 grid-rows-3 gap-x-8 gap-y-1 pr-40 mt-2"
+          id="signup_form">
+          <div>
+            <label for="first_name" class="text-[12px] text-white/30 uppercase"
+              >First Name*</label
+            >
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]"
+              required />
+          </div>
+          <div>
+            <label for="last_name" class="text-[12px] text-white/30 uppercase"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]" />
+          </div>
+          <div>
+            <label for="email" class="text-[12px] text-white/30 uppercase"
+              >Email*</label
+            >
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]"
+              required />
+          </div>
+          <div>
+            <label
+              for="phone_number"
+              class="text-[12px] text-white/30 uppercase"
+              >Phone Number</label
+            >
+            <input
+              type="tel"
+              name="phone_number"
+              id="phone_number"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]" />
+          </div>
+          <div>
+            <label for="password" class="text-[12px] text-white/30 uppercase"
+              >Password*</label
+            >
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]"
+              required minlength="8" />
+          </div>
+          <div>
+            <label
+              for="confirm_password"
+              class="text-[12px] text-white/30 uppercase"
+              ><span class="flex justify-between"
+                >Confirm Password*
+                <span class="text-[11px] mb-[-50px] text-red-600 hidden warning"
+                  >Password Mismatch</span
+                ></span
+              ></label
+            >
+            <input
+              oninput="validatePassword()"
+              type="password"
+              name="confirm_password"
+              id="confirm_password"
+              class="bg-transparent border-2 border-white/20 h-5 px-1 text-xs w-full outline-none block mt-[-6px] focus:border-[var(--color)]"
+              required />
+          </div>
+        </form>
+        <button
+          type="submit"
+          form="signup_form"
+          class="text-[var(--color)] border-[var(--color)] border-2 rounded-md px-4 py-2 mt-10 hover:bg-[var(--color)] hover:text-black hover:font-semibold text-base">
+          Create Account
+        </button>
+        <p class="text-base mt-4">
+          Already have an account? &nbsp;<span
+            class="text-[var(--color)] hover:text-white hover:cursor-pointer hover:font-semibold"
+            >Log in</span
+          >
+        </p>
+      </div>
+    </main>
+    <script>
+      const passwordInp = document.querySelector("#password");
+      const confirmPasswordInp = document.querySelector("#confirm_password");
+      const createAccountButton = document.querySelector("button[type=submit]");
+      const warning = document.querySelector(".warning");
+
+      function validatePassword() {
+        if (passwordInp.value !== confirmPasswordInp.value) {
+          warning.classList.remove("hidden");
+          createAccountButton.disabled = true;
+        } else {
+          warning.classList.add("hidden");
+          createAccountButton.disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>
