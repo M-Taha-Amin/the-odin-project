@@ -1,1 +1,1 @@
-[Live Preview](https://m-taha-amin.github.io/the-odin-project/odin-recipes/)
+Live Preview: [https://m-taha-amin.github.io/the-odin-project/odin-recipes/]
