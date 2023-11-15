@@ -7,4 +7,6 @@ This project contains functional implementation of classic game, 'rock, paper, s
 - Compares with the user to see the winner
 - And finally, the one with 5 wins first, wins!
 
+Live Preview: https://m-taha-amin.github.io/the-odin-project/rock,%20paper,%20scissors/
+
 Hope you like it!
