@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.container {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 55vw;
+  border-radius: 2rem;
+}
+.choice {
+  text-align: center;
+  font-size: 10rem;
+  background-color: black;
+  margin: 0 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms;
+}
+.choice:hover {
+  scale: 1.2;
+}
+.choice:active {
+  opacity: 0.5;
+}
+.result {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.score-card {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+}
+.score {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
