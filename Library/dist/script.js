@@ -2,30 +2,17 @@
 
 // Book Class: Represents a book
 class Book {
-  static counter = 0;
-  constructor(title, author, pages, read) {
+  constructor(title, author, pages, read, id) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-
-    // Add id to each instance
-    this.id = (function () {
-      return ++Book.counter;
-    })();
+    this.id = Date.now();
   }
-  static toggleReadStatus(clickedElement) {
-    let id;
-    if (clickedElement.classList.contains("circle-bg")) {
-      id =
-        +clickedElement.parentElement.parentElement.firstElementChild
-          .textContent;
-    } else if (clickedElement.classList.contains("circle")) {
-      id =
-        +clickedElement.parentElement.parentElement.parentElement
-          .firstElementChild.textContent;
-    }
 
+  static toggleReadStatus(clickedElement) {
+    let card = clickedElement.closest(".card");
+    let id = +card.dataset.id;
     const books = Store.getBooks();
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
@@ -44,8 +31,8 @@ class UI {
     const container = document.querySelector("#container");
 
     const card = ` 
-    <article id="card" class="card ${book.read ? "read" : "unread"}">
-    <span class="absolute top-0 left-0 hidden" >${book.id}</span>
+    <article id="card" class="card ${book.read ? "read" : "unread"}" 
+    data-id=${+book.id}>
     <span class="delete-button">×</span>
     <h2 class="title">${book.title}</h2>
     <div class="mx-auto text-center font-mono text-base">
@@ -105,7 +92,7 @@ class UI {
   }
 
   static removeEmptyMessage() {
-    document.getElementById("emptyMessage").remove();
+    document.getElementById("emptyMessage")?.remove();
   }
 
   // Show book form
@@ -120,12 +107,7 @@ class UI {
 
   // Toggles theme
   static toggleCardTheme(clickedElement) {
-    let card;
-    if (clickedElement.classList.contains("circle-bg")) {
-      card = clickedElement.parentElement.parentElement;
-    } else if (clickedElement.classList.contains("circle")) {
-      card = clickedElement.parentElement.parentElement.parentElement;
-    }
+    let card = clickedElement.closest(".card");
     const circleBackground = card.querySelector("#circle-bg");
     const circle = card.querySelector("#circle");
     card.classList.toggle("read");
@@ -203,6 +185,8 @@ addBookButton.addEventListener("click", () => {
   // Add book to storage
   Store.addBook(book);
 
+  console.log(Store.getBooks());
+
   // The form fades out in 300ms/0.3s so the book should be only displayed after the form is hidden
   setTimeout(() => {
     // Clear form fields
@@ -211,6 +195,7 @@ addBookButton.addEventListener("click", () => {
     // display book in ui
     UI.displayBook(book);
 
+    // Remove Empty Library Message
     UI.removeEmptyMessage();
   }, 300);
 });
@@ -227,7 +212,7 @@ container.addEventListener("click", (e) => {
     UI.removeBook(e.target);
 
     // remove book from storage
-    const id = +e.target.previousElementSibling.textContent;
+    const id = +e.target.closest(".card").dataset.id;
     Store.removeBook(id);
 
     const books = Store.getBooks();
