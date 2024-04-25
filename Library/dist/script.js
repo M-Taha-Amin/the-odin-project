@@ -90,6 +90,24 @@ class UI {
     deleteButton.parentElement.remove();
   }
 
+  // Add Library is Empty Message
+  static addEmptyMessage() {
+    const header = document.querySelector(".header");
+    const emptyMessage = `
+    <h1 class="my-10 px-4 text-center" id="emptyMessage">
+      <span class="my-4 text-3xl font-black"
+        >Your Book Library is Empty &#128532;</span
+      ><br />
+      <span class="text-xl">Click the button to some books.</span>
+    </h1>
+    `;
+    header.insertAdjacentHTML("afterend", emptyMessage);
+  }
+
+  static removeEmptyMessage() {
+    document.getElementById("emptyMessage").remove();
+  }
+
   // Show book form
   static displayBookForm() {
     document.querySelector("#overlay").classList.toggle("show");
@@ -192,6 +210,8 @@ addBookButton.addEventListener("click", () => {
 
     // display book in ui
     UI.displayBook(book);
+
+    UI.removeEmptyMessage();
   }, 300);
 });
 
@@ -209,6 +229,11 @@ container.addEventListener("click", (e) => {
     // remove book from storage
     const id = +e.target.previousElementSibling.textContent;
     Store.removeBook(id);
+
+    const books = Store.getBooks();
+    if (books.length === 0) {
+      UI.addEmptyMessage();
+    }
   }
 });
 
@@ -235,5 +260,9 @@ container.addEventListener("click", (e) => {
 // Display books on page startup
 document.addEventListener("DOMContentLoaded", () => {
   const books = Store.getBooks();
-  books.forEach((book) => UI.displayBook(book));
+  if (books.length === 0) {
+    UI.addEmptyMessage();
+  } else {
+    books.forEach((book) => UI.displayBook(book));
+  }
 });
